@@ -8,7 +8,7 @@ st.markdown("""
         background-color: #020d1f !important;
         color: white !important;
         border: none !important;
-        border-radius: 15px !important;
+        border-radius: 10px !important;
     }
     [data-testid="stSidebar"] button[kind="secondary"]:hover {
         background-color: #020d1f !important;
@@ -49,7 +49,7 @@ if st.sidebar.button("Find"):
             st.success("PATH FOUND!")
 
             st.subheader("Shortest Path")
-            st.write(f"**Nodes:** {' ➜ '.join(map(str, path))}")
+            st.write(f"**Nodes:** {' ➝ '.join(map(str, path))}")
             st.subheader("Total Cost")
             st.write(f"**⚪ {cost:.2f} Miles**")
             st.subheader("Algorithm Running Time")
