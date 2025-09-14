@@ -65,9 +65,16 @@ def a_star_search(graph, start, goal):
     g_score[start] = 0
     f_score = {node: float('inf') for node in graph.nodes}
     f_score[start] = haversine_distance(*graph.nodes[start], *graph.nodes[goal])
+    closed_set = set()  # Nodes that have been fully expanded
 
     while frontier:
         current_f, current = heapq.heappop(frontier)
+
+        # Skip if we've already processed this node with a better score
+        if current in closed_set:
+            continue
+
+        closed_set.add(current)
 
         if current == goal:
             # Reconstruct path
@@ -80,6 +87,9 @@ def a_star_search(graph, start, goal):
             return path, g_score[goal]
 
         for neighbor, cost in graph.graph[current]:
+            if neighbor in closed_set:
+                continue
+
             tentative_g = g_score[current] + cost
             if tentative_g < g_score[neighbor]:
                 came_from[neighbor] = current
