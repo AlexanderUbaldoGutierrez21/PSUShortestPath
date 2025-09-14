@@ -1,6 +1,23 @@
 import streamlit as st
 from PSUShortestPath_Algorithm import find_shortest_path, Graph
 
+# Add custom CSS for sidebar button styling
+st.markdown("""
+<style>
+    [data-testid="stSidebar"] button[kind="secondary"] {
+        background-color: #020d1f !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 4px !important;
+    }
+    [data-testid="stSidebar"] button[kind="secondary"]:hover {
+        background-color: #020d1f !important;
+        color: white !important;
+        opacity: 0.8 !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # SIDEBAR SETTINGS
 st.sidebar.image("PSU_Logo2.png", width=125)
 st.sidebar.header("⚪ Select Nodes")
