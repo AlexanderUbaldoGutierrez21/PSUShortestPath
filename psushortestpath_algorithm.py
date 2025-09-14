@@ -4,24 +4,21 @@ import time
 from math import sin, cos, sqrt, atan2, radians
 
 def haversine_distance(lat1, lon1, lat2, lon2):
-    """
-    Calculate the great circle distance between two points
-    on the earth (specified in decimal degrees)
-    """
-    # Radius of earth in miles
+
+    # RADIUS OF EARTH IN MILES
     R = 3958.8
 
-    # Convert to radians
+    # FUTURE DEPLOYMENT LINES
     lat1_rad = radians(lat1)
     lon1_rad = radians(lon1)
     lat2_rad = radians(lat2)
     lon2_rad = radians(lon2)
 
-    # Differences
+    # DIFFERENCES
     dlon = lon2_rad - lon1_rad
     dlat = lat2_rad - lat1_rad
 
-    # Haversine formula
+    # HARVESINE FORMULA
     a = sin(dlat / 2)**2 + cos(lat1_rad) * cos(lat2_rad) * sin(dlon / 2)**2
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
@@ -59,25 +56,23 @@ def a_star_search(graph, start, goal):
     A* search algorithm
     """
     frontier = []
-    heapq.heappush(frontier, (0, start))  # (f_score, node)
+    heapq.heappush(frontier, (0, start))  
     came_from = {}
     g_score = {node: float('inf') for node in graph.nodes}
     g_score[start] = 0
     f_score = {node: float('inf') for node in graph.nodes}
     f_score[start] = haversine_distance(*graph.nodes[start], *graph.nodes[goal])
-    closed_set = set()  # Nodes that have been fully expanded
+    closed_set = set() 
 
     while frontier:
         current_f, current = heapq.heappop(frontier)
 
-        # Skip if we've already processed this node with a better score
         if current in closed_set:
             continue
 
         closed_set.add(current)
 
         if current == goal:
-            # Reconstruct path
             path = []
             while current in came_from:
                 path.append(current)
@@ -97,7 +92,7 @@ def a_star_search(graph, start, goal):
                 f_score[neighbor] = tentative_g + haversine_distance(*graph.nodes[neighbor], *graph.nodes[goal])
                 heapq.heappush(frontier, (f_score[neighbor], neighbor))
 
-    return None, float('inf')  # No path found
+    return None, float('inf')
 
 def find_shortest_path(start=1, goal=2):
     """
@@ -117,7 +112,8 @@ def find_shortest_path(start=1, goal=2):
     return path, cost, running_time
 
 if __name__ == "__main__":
-    # Default: Node 1 to Node 2
+    
+    # DEFAULT NODE 1 TO NODE 2
     path, cost, running_time = find_shortest_path()
     if path:
         print(f"Shortest Path: {path}")
