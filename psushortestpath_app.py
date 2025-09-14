@@ -1,37 +1,10 @@
 import streamlit as st
 from PSUShortestPath_Algorithm import find_shortest_path, Graph
 
-
-# Apple-style CSS for clean, minimalistic look
-st.markdown("""
-<style>
-    .main {
-        background-color: #f5f5f7;
-        color: #1d1d1f;
-    }
-    .stButton>button {
-        background-color: #000C19;
-        color: white;
-        border-radius: 8px;
-        border: none;
-        padding: 10px 20px;
-        font-size: 15px;
-    }
-    .stButton>button:hover {
-        color: white;
-    }
-    .stSelectbox, .stNumberInput {
-        border-radius: 8px;
-    }
-    h1, h2, h3 {
-        color: #1d1d1f;
-    }
-</style>
-""", unsafe_allow_html=True)
-
 # SIDEBAR SETTINGS
 st.sidebar.image("PSU_Logo2.png", width=125)
 st.sidebar.header("⚪ Select Nodes")
+
 st.image("PSU_Logo1.png", width=400)
 st.title("AV's Shortest Path Finder")
 st.markdown("CE 521 Transportation Networks and System Analysis")
@@ -59,14 +32,11 @@ if st.sidebar.button("Find"):
             st.success("PATH FOUND!")
 
             st.subheader("Shortest Path")
-            st.write(f"**Nodes:** {'  ►  '.join(map(str, path))}")
+            st.write(f"**Nodes:** {'  ⟶  '.join(map(str, path))}")
             st.subheader("Total Cost")
             st.write(f"**{cost:.2f} Miles**")
             st.subheader("Algorithm Running Time")
             st.write(f"**{running_time:.4f} Seconds**")
-            
-            # PATH VISUALIZATION
-            st.subheader("Path Visualization")
         else:
             st.error("NO PATH FOUND")
 
