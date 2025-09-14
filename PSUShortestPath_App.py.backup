@@ -36,9 +36,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Sidebar configuration
-st.sidebar.image("PSU_Logo2.png", width=125)
-st.sidebar.header("⚪ Select Nodes")
+st.image("PSU_Logo1.png", width=400)
 st.title("Autonomous Vehicle Shortest Path Finder")
 st.markdown("CE 521 Transportation Networks and System Analysis")
 
@@ -50,15 +48,15 @@ except FileNotFoundError:
     st.error("CSV files not found. Please ensure Nodes.csv and Links.csv are in the same directory.")
     st.stop()
 
-# Sidebar inputs
+col1, col2 = st.columns(2)
 
-# 
-start_node = st.sidebar.selectbox("Start Node", node_options, index=node_options.index(1) if 1 in node_options else 0)
+with col1:
+    start_node = st.selectbox("Start Node", node_options, index=node_options.index(1) if 1 in node_options else 0)
 
-# 
-goal_node = st.sidebar.selectbox("Goal Node", node_options, index=node_options.index(2) if 2 in node_options else 0)
+with col2:
+    goal_node = st.selectbox("Goal Node", node_options, index=node_options.index(2) if 2 in node_options else 0)
 
-if st.sidebar.button("Find"):
+if st.button("Find"):
     if start_node == goal_node:
         st.warning("Start and goal nodes must be different.")
     else:
@@ -85,3 +83,4 @@ if st.sidebar.button("Find"):
             st.error("No path found between the selected nodes.")
 
 st.markdown("---")
+st.markdown("*Academic project for autonomous vehicle pathfinding using A* algorithm.*")
