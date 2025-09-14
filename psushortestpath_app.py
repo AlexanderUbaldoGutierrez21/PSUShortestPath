@@ -1,30 +1,5 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 from PSUShortestPath_Algorithm import find_shortest_path, Graph
-def create_path_visualization(graph, path):
-    """Create a matplotlib visualization of the path"""
-    fig, ax = plt.subplots(figsize=(10, 8))
-    
-    # Plot all nodes
-    for node_id, (lat, lon) in graph.nodes.items():
-        if node_id in path:
-            ax.scatter(lon, lat, c='red', s=100, alpha=0.7, edgecolors='darkred', linewidth=2)
-            ax.text(lon, lat + 0.001, f'Node {node_id}', fontsize=8, ha='center')
-        else:
-            ax.scatter(lon, lat, c='blue', s=50, alpha=0.5)
-    
-    # Plot path connections
-    if len(path) > 1:
-        path_coords = [(graph.nodes[node][1], graph.nodes[node][0]) for node in path]  # (lon, lat)
-        lons, lats = zip(*path_coords)
-        ax.plot(lons, lats, c='red', linewidth=3, alpha=0.8, marker='o', markersize=8)
-    
-    ax.set_xlabel('Longitude')
-    ax.set_ylabel('Latitude')
-    ax.set_title('A* Shortest Path Visualization')
-    ax.grid(True, alpha=0.3)
-    
-    return fig
 
 
 # Apple-style CSS for clean, minimalistic look
