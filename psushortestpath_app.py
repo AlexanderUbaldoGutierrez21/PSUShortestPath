@@ -33,6 +33,11 @@ st.markdown("""
     }
     .result-box {
         background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin: 10px 0;
+    }
     .block-container {
         max-width: 100%;
         padding-left: 1rem;
@@ -43,12 +48,7 @@ st.markdown("""
     }
     .stImage {
         text-align: left;
-    }        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        margin: 10px 0;
-    }
-</style>
+    }</style>
 """, unsafe_allow_html=True)
 
 # Sidebar configuration
@@ -80,7 +80,8 @@ if st.sidebar.button("Find"):
         if path:
             st.success("PATH FOUND!")
 
-            st.markdown('<div class="result-box">Result box content</div>', unsafe_allow_html=True)            st.subheader("Shortest Path")
+            st.markdown('<div class="result-box">Result box content</div>', unsafe_allow_html=True)
+            st.subheader("Shortest Path")
             st.write(f"**Nodes:** {'  ⟶  '.join(map(str, path))}")
             st.subheader("Total Cost")
             st.write(f"**{cost:.2f} Miles**")
