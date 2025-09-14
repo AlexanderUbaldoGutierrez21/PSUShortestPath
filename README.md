@@ -1,59 +1,22 @@
-# Autonomous Vehicle Shortest Path Finder
+# AV's SHORTEST PATH FINDER
 
 This project implements an A* algorithm for finding the shortest and most efficient path in autonomous vehicles using geographical data. It employs the f(n) = g(n) + h(n) formula, where h(n) is the heuristic based on Haversine distance.
 
-## Features
-
-- **A* Algorithm Implementation**: Efficient pathfinding with admissible heuristic
-- **Geographical Distance Calculation**: Uses Haversine formula for accurate distance computation
-- **Interactive Web Interface**: Clean, Apple-style Streamlit application
-- **Customizable Start/Goal Nodes**: Select any nodes from the dataset
-- **Performance Metrics**: Displays path, total cost, and algorithm running time
-
-## Data Files
-
-- `Nodes.csv`: Contains node information (ID, latitude, longitude)
-- `Links.csv`: Contains link information (from/to nodes, length in miles)
-
-## Installation
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-### Command Line
-Run the Python script directly:
+## USAGE
+Terminal MAC
 ```bash
-python PSUShortestPath_Algorithm.py
+python3 PSUShortestPath_Algorithm.py
+```
+Launch Streamlit App 
+Terminal MAC
+```bash
+python3 -m streamlit run PSUShortestPath_App.py
+```
+Web Application URL 
+Terminal MAC
+```bash
+https://psushortestpath.streamlit.app 
 ```
 
-### Web Application
-Launch the Streamlit app:
-```bash
-streamlit run PSUShortestPath_App.py
-```
-
-Then open your browser to the provided URL.
-
-## Algorithm Details
-
-- **Heuristic (h(n))**: Straight-line distance using Haversine formula
-- **Cost (g(n))**: Cumulative link lengths in miles
-- **Total Cost (f(n))**: g(n) + h(n)
-
-## Academic Purpose
-
+## ACADEMIC PURPOSE
 This software is developed for academic purposes and demonstrates pathfinding concepts. It is not intended for direct integration into vehicle ADAS systems.
-
-## Dependencies
-
-- Python 3.7+
-- Streamlit
-
-## License
-
-Academic use only.
