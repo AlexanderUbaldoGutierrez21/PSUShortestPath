@@ -1,4 +1,10 @@
 import streamlit as st
+# Page configuration
+st.set_page_config(
+    page_title="AV's Shortest Path Finder",
+    layout="wide"
+)
+
 from PSUShortestPath_Algorithm import find_shortest_path, Graph
 
 # Apple-style CSS for clean, minimalistic look
@@ -27,7 +33,17 @@ st.markdown("""
     }
     .result-box {
         background-color: white;
-        padding: 20px;
+    .block-container {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    h1, h2, h3, p {
+        text-align: left !important;
+    }
+    .stImage {
+        text-align: left;
+    }        padding: 20px;
         border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         margin: 10px 0;
@@ -64,17 +80,13 @@ if st.sidebar.button("Find"):
         if path:
             st.success("PATH FOUND!")
 
-            st.subheader("Shortest Path")
+            st.markdown('<div class="result-box">Result box content</div>', unsafe_allow_html=True)            st.subheader("Shortest Path")
             st.write(f"**Nodes:** {'  ⟶  '.join(map(str, path))}")
             st.subheader("Total Cost")
             st.write(f"**{cost:.2f} Miles**")
             st.subheader("Algorithm Running Time")
             st.write(f"**{running_time:.4f} Seconds**")
             
-            # Result box below results
-            st.markdown('<div class="result-box">', unsafe_allow_html=True)
-            st.markdown('</div>', unsafe_allow_html=True)
-
             # Optional: Display map or visualization
             st.subheader("Path Visualization")
         else:
