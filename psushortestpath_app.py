@@ -49,11 +49,11 @@ if st.sidebar.button("Find"):
             st.success("PATH FOUND!")
 
             st.subheader("Shortest Path")
-            st.write(f"**Nodes:** {'  ⟶  '.join(map(str, path))}")
+            st.write(f"**Nodes:** {' ➤ '.join(map(str, path))}")
             st.subheader("Total Cost")
-            st.write(f"**{cost:.2f} Miles**")
+            st.write(f"**⚪ {cost:.2f} Miles**")
             st.subheader("Algorithm Running Time")
-            st.write(f"**{running_time:.4f} Seconds**")
+            st.write(f"**⚪ {running_time:.4f} Seconds**")
         else:
             st.error("NO PATH FOUND")
 
