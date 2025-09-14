@@ -7,18 +7,17 @@ st.markdown("""
     .main {
         background-color: #f5f5f7;
         color: #1d1d1f;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     .stButton>button {
-        background-color: #007aff;
+        background-color: #000C19;
         color: white;
         border-radius: 8px;
         border: none;
         padding: 10px 20px;
-        font-size: 16px;
+        font-size: 15px;
     }
     .stButton>button:hover {
-        background-color: #0056cc;
+        color: white;
     }
     .stSelectbox, .stNumberInput {
         border-radius: 8px;
@@ -39,7 +38,8 @@ st.markdown("""
 # Sidebar configuration
 st.sidebar.image("PSU_Logo2.png", width=125)
 st.sidebar.header("⚪ Select Nodes")
-st.title("Autonomous Vehicle Shortest Path Finder")
+st.image("PSU_Logo1.png", width=400)
+st.title("AV's Shortest Path Finder")
 st.markdown("CE 521 Transportation Networks and System Analysis")
 
 # Load graph to get available nodes
@@ -51,11 +51,7 @@ except FileNotFoundError:
     st.stop()
 
 # Sidebar inputs
-
-# 
 start_node = st.sidebar.selectbox("Start Node", node_options, index=node_options.index(1) if 1 in node_options else 0)
-
-# 
 goal_node = st.sidebar.selectbox("Goal Node", node_options, index=node_options.index(2) if 2 in node_options else 0)
 
 if st.sidebar.button("Find"):
@@ -68,20 +64,20 @@ if st.sidebar.button("Find"):
         if path:
             st.success("PATH FOUND!")
 
-            with st.container():
+            st.subheader("Shortest Path")
+            st.write(f"**Nodes:** {'  ⟶  '.join(map(str, path))}")
+            st.subheader("Total Cost")
+            st.write(f"**{cost:.2f} Miles**")
+            st.subheader("Algorithm Running Time")
+            st.write(f"**{running_time:.4f} Seconds**")
+            
+            # Result box below results
                 st.markdown('<div class="result-box">', unsafe_allow_html=True)
-                st.subheader("Shortest Path")
-                st.write(f"**Nodes:** {' → '.join(map(str, path))}")
-                st.subheader("Total Cost")
-                st.write(f"**{cost:.2f} miles**")
-                st.subheader("Algorithm Running Time")
-                st.write(f"**{running_time:.4f} seconds**")
                 st.markdown('</div>', unsafe_allow_html=True)
 
             # Optional: Display map or visualization
             st.subheader("Path Visualization")
-            st.info("Map visualization can be added here using folium or similar library.")
         else:
-            st.error("No path found between the selected nodes.")
+            st.error("NO PATH FOUND")
 
 st.markdown("---")
