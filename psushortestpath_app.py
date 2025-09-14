@@ -38,7 +38,7 @@ except FileNotFoundError:
 start_node = st.sidebar.selectbox("Start Node", node_options, index=node_options.index(1) if 1 in node_options else 0)
 goal_node = st.sidebar.selectbox("Goal Node", node_options, index=node_options.index(2) if 2 in node_options else 0)
 
-if st.sidebar.button("Find"):
+if st.sidebar.button("Find Path"):
     if start_node == goal_node:
         st.warning("Start and goal nodes must be different.")
     else:
