@@ -72,8 +72,8 @@ if st.sidebar.button("Find"):
             st.write(f"**{running_time:.4f} Seconds**")
             
             # Result box below results
-                st.markdown('<div class="result-box">', unsafe_allow_html=True)
-                st.markdown('</div>', unsafe_allow_html=True)
+            st.markdown('<div class="result-box">', unsafe_allow_html=True)
+            st.markdown('</div>', unsafe_allow_html=True)
 
             # Optional: Display map or visualization
             st.subheader("Path Visualization")
