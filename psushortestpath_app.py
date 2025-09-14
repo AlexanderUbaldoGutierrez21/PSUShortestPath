@@ -1,5 +1,5 @@
 import streamlit as st
-from psushortestpath_algorithm import find_shortest_path, Graph
+from PSUShortestPath_Algorithm import find_shortest_path, Graph
 
 # Apple-style CSS for clean, minimalistic look
 st.markdown("""

@@ -28,13 +28,13 @@ This project implements an A* algorithm for finding the shortest and most effici
 ### Command Line
 Run the Python script directly:
 ```bash
-python psushortestpath_algorithm.py
+python PSUShortestPath_Algorithm.py
 ```
 
 ### Web Application
 Launch the Streamlit app:
 ```bash
-streamlit run psushortestpath_app.py
+streamlit run PSUShortestPath_App.py
 ```
 
 Then open your browser to the provided URL.
