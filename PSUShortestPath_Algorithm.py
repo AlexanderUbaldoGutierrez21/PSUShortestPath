@@ -94,7 +94,7 @@ def a_star_search(graph, start, goal):
 
     return None, float('inf')
 
-def find_shortest_path(start=1, goal=2):
+def find_shortest_path(start=1, goal=20):
     """
     Main function to find shortest path
     """
@@ -112,8 +112,8 @@ def find_shortest_path(start=1, goal=2):
     return path, cost, running_time
 
 if __name__ == "__main__":
-    
-    # DEFAULT NODE 1 TO NODE 2
+
+    # DEFAULT NODE 1 TO NODE 20
     path, cost, running_time = find_shortest_path()
     if path:
         print(f"Shortest Path: {path}")
