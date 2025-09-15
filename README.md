@@ -19,4 +19,4 @@ https://psushortestpath.streamlit.app
 
 ## Academic Purpose
 This software is developed for academic purposes. It is not intended for direct integration into vehicle ADAS systems.
-Penn State University (PSU), CE 521 Transportation Networks and Systems Analysis. Fall 2025. 
+Penn State University (PSU), CE 521 Transportation Network and Systems Analysis. Fall 2025. 

@@ -24,7 +24,7 @@ st.sidebar.header("⚪ Select Nodes")
 
 st.image("PSU_Logo1.png", width=400)
 st.title("AV's Shortest Path Finder")
-st.markdown("CE 521 Transportation Networks and System Analysis")
+st.markdown("CE 521 Transportation Network and System Analysis")
 
 # LOAD NODE AND LINKS GRAPH
 try:
