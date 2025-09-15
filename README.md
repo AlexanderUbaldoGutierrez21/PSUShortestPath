@@ -1,8 +1,8 @@
-# AV's SHORTEST PATH FINDER
+# AV's Shortest Path Finder
 
-This project implements an A* algorithm for finding the shortest and most efficient path in autonomous vehicles using geographical data. It employs the f(n) = g(n) + h(n) formula, where h(n) is the heuristic based on Haversine distance.
+This project implements an A* algorithm for finding the shortest and most efficient path in autonomous vehicles (AV's) using geographical data. It employs the f(n) = g(n) + h(n) formula, where h(n) is the heuristic based on Haversine distance.
 
-## USAGE
+## Usage
 Terminal MAC
 ```bash
 python3 PSUShortestPath_Algorithm.py
@@ -18,5 +18,6 @@ Terminal MAC
 https://psushortestpath.streamlit.app 
 ```
 
-## ACADEMIC PURPOSE
-This software is developed for academic purposes and demonstrates pathfinding concepts. It is not intended for direct integration into vehicle ADAS systems.
+## Academic Purpose
+This software is developed for academic purposes. It is not intended for direct integration into vehicle ADAS systems.
+Penn State University (PSU), CE 521 Transportation Networks and System Analysis. Fall 2025. 
