@@ -13,7 +13,6 @@ Terminal MAC
 python3 -m streamlit run PSUShortestPath_App.py
 ```
 Web Application URL 
-Terminal MAC
 ```bash
 https://psushortestpath.streamlit.app 
 ```
