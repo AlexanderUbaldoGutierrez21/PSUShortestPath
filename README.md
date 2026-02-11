@@ -3,7 +3,7 @@
 This project implements an A* algorithm for finding the shortest and most efficient path in autonomous vehicles (AV's) using geographical data. It employs the f(n) = g(n) + h(n) formula, where h(n) is the heuristic based on Haversine distance.
 
 ## Usage
-Terminal MAC
+Terminal MAC Run Script
 ```bash
 python3 PSUShortestPath_Algorithm.py
 ```
